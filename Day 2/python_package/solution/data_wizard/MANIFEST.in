@@ -1,0 +1,27 @@
+# Include license and readme
+include LICENSE
+include README.md
+include pyproject.toml
+
+# Include all test files
+recursive-include tests *.py
+
+# Include example files
+recursive-include examples *.py
+recursive-include examples *.csv
+
+# Include documentation
+recursive-include docs *.rst
+recursive-include docs *.py
+recursive-include docs Makefile
+
+# Exclude build files and caches
+recursive-exclude * __pycache__
+recursive-exclude * *.py[cod]
+recursive-exclude * *.so
+recursive-exclude * .DS_Store
+recursive-exclude * .env
+recursive-exclude * .venv
+recursive-exclude * venv
+recursive-exclude * .coverage
+recursive-exclude * htmlcov 
