@@ -1,24 +1,21 @@
 # ---- Fixtures ----
-
-
 import pytest
 from classes import Employee
 
-
 # Fixture employee
+@pytest.fixture
+def employee():
+    return Employee("Jane", 25, 50000)
 
-def test_employee_creation():
-    employee = None
-    assert employee.lastname == "Jane"
+def test_employee_creation(employee):
+    assert employee.name == "Jane"
     assert employee.age == 25
     assert employee.salary == 50000
 
-def test_employee_salary():
-    employee = None
+def test_employee_salary(employee):
     assert employee.get_salary() == 50000
 
-def test_employee_projected_salary():
-    employee = None
+def test_employee_projected_salary(employee):
     assert employee.projected_salary(1) == 52500
     assert employee.projected_salary(0) == 50000
 
